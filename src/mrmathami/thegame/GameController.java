@@ -179,6 +179,7 @@ public final class GameController extends AnimationTimer {
 	final void keyUpHandler(KeyEvent keyEvent) {
 		final KeyCode keyCode = keyEvent.getCode();
 		if (keyCode == KeyCode.W) {
+			System.out.println("sunbae dep trai");
 		} else if (keyCode == KeyCode.S) {
 		} else if (keyCode == KeyCode.A) {
 		} else if (keyCode == KeyCode.D) {

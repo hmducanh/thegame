@@ -4,7 +4,7 @@ public final class Config {
 	/**
 	 * Game name. Change it if you want.
 	 */
-	public static final String GAME_NAME = "The Game";
+	public static final String GAME_NAME = "Sunbae game";
 	/**
 	 * Ticks per second
 	 */
@@ -44,7 +44,7 @@ public final class Config {
 	/**
 	 * Size of the screen.
 	 */
-	public static final long SCREEN_HEIGHT = TILE_SIZE * TILE_VERTICAL;
+	public static final long SCREEN_HEIGHT = TILE_SIZE * TILE_VERTICAL - 100;
 
 
 	//Other config related to other entities in the game.

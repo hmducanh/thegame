@@ -5,7 +5,7 @@ import mrmathami.thegame.entity.tile.Mountain;
 import mrmathami.thegame.entity.tile.Road;
 import mrmathami.thegame.entity.tile.Target;
 import mrmathami.thegame.entity.tile.spawner.NormalSpawner;
-import mrmathami.thegame.entity.tile.tower.NormalTower;
+import mrmathami.thegame.entity.tile.tower.*;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -39,7 +39,7 @@ public final class GameStage {
 					for (int x = 0; x < width; x++) {
 						final int value = scanner.nextInt();
 						if (value == 0) {
-							entities.add(new Road(0, x, y));
+							boolean add = entities.add(new Road(0, x, y));
 						} else if (value == 1) {
 							entities.add(new Mountain(0, x, y));
 						} else {
@@ -61,45 +61,45 @@ public final class GameStage {
 						final int initialDelay = scanner.nextInt();
 						final int numOfSpawn = scanner.nextInt();
 						entities.add(new NormalSpawner(0, x, y, w, h, spawnInterval, initialDelay, numOfSpawn));
-//					} else if ("SmallerSpawner".equals(value)) {
-//						final int x = scanner.nextInt();
-//						final int y = scanner.nextInt();
-//						final int w = scanner.nextInt();
-//						final int h = scanner.nextInt();
-//						final int spawnInterval = scanner.nextInt();
-//						final int initialDelay = scanner.nextInt();
-//						final int numOfSpawn = scanner.nextInt();
-//						entities.add(new SmallerSpawner(0, x, y, w, h, spawnInterval, initialDelay, numOfSpawn));
-//					} else if ("TankerSpawner".equals(value)) {
-//						final int x = scanner.nextInt();
-//						final int y = scanner.nextInt();
-//						final int w = scanner.nextInt();
-//						final int h = scanner.nextInt();
-//						final int spawnInterval = scanner.nextInt();
-//						final int initialDelay = scanner.nextInt();
-//						final int numOfSpawn = scanner.nextInt();
-//						entities.add(new TankerSpawner(0, x, y, w, h, spawnInterval, initialDelay, numOfSpawn));
-//					} else if ("BossSpawner".equals(value)) {
-//						final int x = scanner.nextInt();
-//						final int y = scanner.nextInt();
-//						final int w = scanner.nextInt();
-//						final int h = scanner.nextInt();
-//						final int spawnInterval = scanner.nextInt();
-//						final int initialDelay = scanner.nextInt();
-//						final int numOfSpawn = scanner.nextInt();
-//						entities.add(new BossSpawner(0, x, y, w, h, spawnInterval, initialDelay, numOfSpawn));
 					} else if ("NormalTower".equals(value)) {
 						final int x = scanner.nextInt();
 						final int y = scanner.nextInt();
 						entities.add(new NormalTower(0, x, y));
-//					} else if ("MachineGunTower".equals(value)) {
-//						final int x = scanner.nextInt();
-//						final int y = scanner.nextInt();
-//						entities.add(new MachineGunTower(0, x, y));
-//					} else if ("SniperTower".equals(value)) {
-//						final int x = scanner.nextInt();
-//						final int y = scanner.nextInt();
-//						entities.add(new SniperTower(0, x, y));
+					} else if ("MachineGunTower".equals(value)) {
+						final int x = scanner.nextInt();
+						final int y = scanner.nextInt();
+						entities.add(new MachineGunTower(0, x, y));
+					} else if ("SniperTower".equals(value)) {
+						final int x = scanner.nextInt();
+						final int y = scanner.nextInt();
+						entities.add(new SniperTower(0, x, y));
+/*					} else if ("SmallerSpawner".equals(value)) {
+						final int x = scanner.nextInt();
+						final int y = scanner.nextInt();
+						final int w = scanner.nextInt();
+						final int h = scanner.nextInt();
+						final int spawnInterval = scanner.nextInt();
+						final int initialDelay = scanner.nextInt();
+						final int numOfSpawn = scanner.nextInt();
+						entities.add(new SmallerSpawner(0, x, y, w, h, spawnInterval, initialDelay, numOfSpawn));
+					} else if ("TankerSpawner".equals(value)) {
+						final int x = scanner.nextInt();
+						final int y = scanner.nextInt();
+						final int w = scanner.nextInt();
+						final int h = scanner.nextInt();
+						final int spawnInterval = scanner.nextInt();
+						final int initialDelay = scanner.nextInt();
+						final int numOfSpawn = scanner.nextInt();
+						entities.add(new TankerSpawner(0, x, y, w, h, spawnInterval, initialDelay, numOfSpawn));
+					} else if ("BossSpawner".equals(value)) {
+						final int x = scanner.nextInt();
+						final int y = scanner.nextInt();
+						final int w = scanner.nextInt();
+						final int h = scanner.nextInt();
+						final int spawnInterval = scanner.nextInt();
+						final int initialDelay = scanner.nextInt();
+						final int numOfSpawn = scanner.nextInt();
+						entities.add(new BossSpawner(0, x, y, w, h, spawnInterval, initialDelay, numOfSpawn));
 					} else if ("Target".equals(value)) {
 						final int x = scanner.nextInt();
 						final int y = scanner.nextInt();
@@ -116,7 +116,7 @@ public final class GameStage {
 								road.setDistance(0.0);
 							}
 						}
-					} else {
+*/					} else {
 						System.out.println("Unexpected value! Input value: " + value);
 						scanner.nextLine();
 //						throw new InputMismatchException("Unexpected value! Input value: " + value);
